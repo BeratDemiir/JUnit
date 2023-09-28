@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class C05_BAExample {
+public class C05_BAExample01 {
 
     WebDriver driver;
     @Before
