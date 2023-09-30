@@ -55,12 +55,12 @@ public class C01_Dropdown {
 
         /*
            1. Dropdown nedir?
-             ==> Dropdown liste olusturmak icin kullanilir.
+             ==> Dropdown liste olusturmak icin kullanilir. Birden fazla secenegi koyabilecegimiz liste
 
            2.  Dropdown nasil automate edilir?
              ==> Dropdown i locate ederim
-             ==> Select object'i olustururum
-             ==> Select object'i ile istedigim secenegi secerim
+             ==> Select class'i kullaniliarak bir select  object'i olustururum
+             ==> Select object'ini uygun method'lar ile istedigim secenegi secerim
          NOT: select object'i olusturma nedenim, dropdownlarin select classi ile olusturulmasi
           3. Tum dropdown seceneklerini nasil print ederiz?
 
