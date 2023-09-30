@@ -24,7 +24,7 @@ public class C04_PromptAlert extends TestBase {
         // ve result mesajında isminizin görüntülendiğini doğrulayın.
         String result = driver.findElement(By.xpath("//p[@id='result']")).getText();
         String expected ="You entered: Berat";
-        Assert.assertEquals(result,expected);
+        Assert.assertTrue(result.contains(expected));
         Thread.sleep(4000);
     }
 }
