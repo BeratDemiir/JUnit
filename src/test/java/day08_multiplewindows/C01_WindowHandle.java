@@ -1,4 +1,4 @@
-package day08_multiplewindows_basicauthentications;
+package day08_multiplewindows;
 
 import org.junit.Assert;
 import org.junit.Test;

@@ -30,4 +30,20 @@ public abstract class TestBase {
     public void tearDown() throws Exception {
         driver.quit();
     }
+
+    //    MULTIPLE WINDOW
+    // Bu method 1 parametre alir: Gecis yapmak istedigim sayfanin Title
+    // Ornek:
+    //   driver.get("https://the-internet.herokuapp.com/windows");
+    //   switchToWindow("Nem Window");
+    public static void switchToWindow(String targetTitle){
+        String origin = driver.getWindowHandle();
+        for (String handle : driver.getWindowHandles()){
+            driver.switchTo().window(handle);
+            if (driver.getTitle().equals(targetTitle)){
+                return;
+            }
+        }
+        driver.switchTo().window(origin);
+    }
 }
