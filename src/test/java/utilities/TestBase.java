@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class TestBase {
 
@@ -41,9 +43,24 @@ public abstract class TestBase {
         for (String handle : driver.getWindowHandles()){
             driver.switchTo().window(handle);
             if (driver.getTitle().equals(targetTitle)){
-                return;
+                return; // Cik  break;
             }
         }
         driver.switchTo().window(origin);
+    }
+
+    // windowNumber sifir dan basliyor.
+    // index numarasini parametre olarak alir ve o indexli pencereye gecis yapar.
+    public static void switchToWindow(int windowNumber){
+        List<String> list = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(list.get(windowNumber));
+    }
+
+    public static void waitFor(int seconds){
+        try {
+            Thread.sleep(seconds*1000);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
     }
 }

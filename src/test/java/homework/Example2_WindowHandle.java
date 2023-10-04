@@ -24,7 +24,9 @@ public class Example2_WindowHandle extends TestBase {
 
         String wHandle2 = driver.getWindowHandle();
 
-        driver.switchTo().window(wHandle2);
+        switchToWindow(1); // Index ile ikinci pencereye gecis
+       //   switchToWindow("New Window"); // String reusable ile ikinci pencereye gecis.
+
         // ● Sonra açılan sayfadaki title in ‘New Window’ oldugunu dogrulayin
         Assert.assertEquals("New Window",driver.getTitle());
     }
