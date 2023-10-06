@@ -16,20 +16,19 @@ public class Example1_WindowHandle extends TestBase {
             driver.get("https://the-internet.herokuapp.com/iframe");
 
         // 2) sayfadaki toplam iframe sayısını bulunuz.
-      WebElement iframeSonuc = driver.findElement(By.tagName("iframe"));
-        System.out.println(iframeSonuc.getSize());
-
-        Set<String> allWindowsHandles = driver.getWindowHandles();
-        System.out.println(allWindowsHandles);
+     int toplamIframe = driver.findElements(By.tagName("iframe")).size();
+        System.out.println(toplamIframe);
 
         // 3) Sayfa basliginda ‘Editor’ yazını içerdiğini test edelim.
-        String editorTitle = driver.findElement(By.xpath("//h3[.='An iFrame containing the TinyMCE WYSIWYG Editor']")).getText();
-        String expectedTitle ="Editor";
-        Assert.assertTrue(expectedTitle.contains(editorTitle));
+         String actualEditorText = driver.findElement(By.xpath("//h3")).getText();
+        Assert.assertTrue(actualEditorText.contains("Editor"));
+
         // 4) Paragrafdaki yaziyi silelim
-//        WebElement dlt = driver.findElement(By.xpath("//*[@id='tinymce']"));
-//        dlt.clear();
-//        Thread.sleep(3000);
+        driver.switchTo().frame(0);
+        WebElement clearText = driver.findElement(By.xpath("//div[@class='tox-sidebar-wrap']"));
+        clearText.clear();
+
+        waitFor(3);
         // 5) Sonrasinda paragrafa “iframein icindeyim” yazisini yazdıralım
         // 6) Alt kısımdaki yazının ‘Elemental Selenium’ yazisini içerdiğini test edelim
 
