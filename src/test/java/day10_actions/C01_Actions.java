@@ -18,7 +18,7 @@ public class C01_Actions extends TestBase {
     //  3.Adim : perform() kullanarak bu webelement üzerinde action  gerçekleştirilir.
           // actions.contextClick(element).perform( );
     @Test
-    public void test1() {
+    public void rightClick() {
 
         //   https://the-internet.herokuapp.com/context_menu  sitesine gidin
         driver.get("https://the-internet.herokuapp.com/context_menu");

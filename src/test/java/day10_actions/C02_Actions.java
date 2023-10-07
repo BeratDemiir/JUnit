@@ -10,16 +10,17 @@ import utilities.TestBase;
 public class C02_Actions extends TestBase {
 
     @Test
-    public void test1() {
+    public void  hoverOver() {
 
         //  Amazon a gidelim https://www.amazon.com/
         driver.get("https://www.amazon.com/");
 
-        //  Sag ust bolumde bulunan “Account & Lists” menüsüne git “Account” secenegine tikka
+        //  Sag ust bolumde bulunan “Account & Lists” menüsüne git
         Actions actions = new Actions(driver);
         WebElement accountList = driver.findElement(By.id("nav-link-accountList-nav-line-1"));
         actions.moveToElement(accountList).perform();
 
+        // “Account” secenegine tikla
         driver.findElement(By.linkText("Account")).click();
 
         //  Acilan sayfanin Title in “Your Account” icerdigini dogrula
