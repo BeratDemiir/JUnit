@@ -1,4 +1,4 @@
-package day09_basicauthentications;
+package day09_basicauthentications_cookies;
 
 import org.junit.Assert;
 import org.junit.Test;

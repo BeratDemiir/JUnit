@@ -31,6 +31,7 @@ public abstract class TestBase {
     // tearDown
     @After
     public void tearDown() throws Exception {
+        waitFor(3);
         driver.quit();
     }
 

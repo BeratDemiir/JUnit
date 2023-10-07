@@ -1,4 +1,4 @@
-package day09_basicauthentications;
+package day09_basicauthentications_cookies;
 
 import org.junit.Test;
 import org.openqa.selenium.Cookie;
