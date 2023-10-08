@@ -24,13 +24,21 @@ public class Example1_WindowHandle extends TestBase {
         Assert.assertTrue(actualEditorText.contains("Editor"));
 
         // 4) Paragrafdaki yaziyi silelim
+
+        WebElement iframe = driver.findElement(By.id("mce_0_ifr"));
         driver.switchTo().frame(0);
-        WebElement clearText = driver.findElement(By.xpath("//div[@class='tox-sidebar-wrap']"));
-        clearText.clear();
+        driver.findElement(By.xpath("//p[text()='Your content goes here.']")).clear();
 
         waitFor(3);
+
         // 5) Sonrasinda paragrafa “iframein icindeyim” yazisini yazdıralım
+       driver.findElement(By.xpath("//*[@id='tinymce']")).sendKeys("iframenin icindeyim");
+        waitFor(3);
+
         // 6) Alt kısımdaki yazının ‘Elemental Selenium’ yazisini içerdiğini test edelim
+        driver.switchTo().defaultContent();
+       String text = driver.findElement(By.xpath("//a[.='Elemental Selenium']")).getText();
+       Assert.assertTrue(text.contains("Elemental Selenium"));
 
     }
 }
