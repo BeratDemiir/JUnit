@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utilities.TestBase;
 
-public class P17_WindowHandle extends TestBase {
+public class P16_WindowHandle extends TestBase {
 
     @Test
     public void test1() {
