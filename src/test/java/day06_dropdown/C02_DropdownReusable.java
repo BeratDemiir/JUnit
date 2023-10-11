@@ -27,7 +27,7 @@ public class C02_DropdownReusable {
  //  REUSABLE METHOD: Dropdown icin tekrar tekrar kullanabilecegimiz bir method olusturalim
     public void selectFromDropdown(WebElement dropdown, String secenek) {
      //   selectFromDropdown(driver.findElement(By.xpath("//select[@id='year']")),"2005");
-    //    selectFromDropdownv(driver.findElement(By.xpath("//select[@id='month']")),"January");
+    //    selectFromDropdown(driver.findElement(By.xpath("//select[@id='month']")),"January");
     //    selectFromDropdown(driver.findElement(By.xpath("//select[@id='day']")), "12");
 
         // Gonderilen dropdown elemnetinin tum optionslari alinir.
