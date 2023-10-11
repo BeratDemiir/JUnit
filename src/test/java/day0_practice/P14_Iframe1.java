@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utilities.TestBase;
 
-public class P14_Iframe extends TestBase {
+public class P14_Iframe1 extends TestBase {
 
     @Test
     public void test1() {
