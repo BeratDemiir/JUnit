@@ -2,58 +2,26 @@ package day13_seleniumexceptions;
 
 public class SeleniumException_InterviewQuestions {
 
-    /*
-    Interview Questions
-Tell me 5 exception that you get.-5 adet selenium da
-aldigin exceptions dan bahset.
+//   Seleniumda aldigin 5 exception?
+        // Null pointer, no such element, time out, slale element, reference, web driver
 
-What type of exceptions do you get in selenium? -
-Seleniumda ki align exceptions tiplerinden bahset
+//    Genel olarak exception aldiginda bozum yolun nedir?
+       // Hata mesajini oku
+       // Genel olarak zamanlama, yanlis locator, iframe hataları olabiliyor
+       // Hata mesajina gore exception I cozdukden sonra tekrar kodumu calistirim
 
-What is your solution?-Cozum ne?
-What type of waits do you use?- Hangi resit wait kullanirsin?
-Which wait do you prefer?- Hangi wait tercih edersin?
-Why do you prefer that wait?- Neden onu tercih edersin?
-How to you resolve synronization issue?-Senkronizasyon problemini nasil cozersin?
+//   Selniumda kullandigin waitler nelerdir>
+      // Implicit yada explicit yada fluent
 
-** NoSuchElementException
-** TimeOutException
-** NullPointerException
-InvalidSelectorException
-** StaleElementReferenceException
-InvalidElementStateException
-** WebDriverException
-     */
+//   Hangi waiti tercih edersin?
+    // Test Base (Driver sinifinda) implicit wait kullanıyorum.
+    // Cogu problemi bozuyor Cozemedigi durumlarda explicit wait kullanıyorum.
 
- //          NoSuchElementException:
-    //Yanlis locator
-    //Popup, yeni pencere, iframe,…
-    //Sayfa dolmada problemler ve yavaslamalar
-    //Sakli olan elementler
+//   Neden Explicit wait?
+    // Explicit wait element e ouzel yazilabilir. Yerel cozum gerektiğinde explicit wait'i kullanmak zorundayiz.
 
-//           Solution: COZUM
-    //Locatorin dogrulugunu tekrar kontrol et
-    //Manual test ile iframe, yeni pencere, alert,… gibi elementlerin varligini kontrol et.
-    //Bekleme problemi olab
-
-//          TimeOutException:
-    // Explicit wait kullanildiginda, ve element bulunamadiginda alinir.
-    // Explicit wait & yanlis locator-> timeout
-    // Explicit wait & doğru locator & sure yeterli degil -> timeout
-    // Explicit wait & dogru locator & sure yeterli & iframe var -> time out
-
-//              Solution: COZUM
-    // -Sureyi arttirmak
-    // -Farkli explicit kullanmak: wait visibilityOfElementLocated YERINE presenceOfElementLocated. Yada javascript executorda ki waiter sayfa geçişlerini beklemek icin kullanabilirim
-    // -Locatori tekrar kontrol etmek
-    // -Frameworkunde hazir reusable method lar var Bu durumda timeoutexception aldigimda hızlıca o metotlar yardımıyla problemi cozebiliyoruz
-
-
-//               NullPointerException
-    // Degiskenleri oluşturup
-    // instantiate etmediğimizde alırız(new kelimesini kullanmadigimizda)
-    // Ornegin WebDriver driver;/deyip = new ChromeDriver() demezisek null pointer exception aliriz
-
- //         Solution: COZUM
-    // Degiskeni instantiate et
+//   Senkronize(bekleme) problemlerini nasıl çözersin?
+    // Selenium waitlerini kullanarak. Implicit wait driver im da var, ama yetmedigi durumlarda explicit wait
+    // kullanirim. Bu yüzden ReusableMethod sinifimda tekrar tekrar kullanabileceğimiz explicit wait method lari var.
+    // Kolaylıkla explicit wait ile bekleme problemlerini cozebuliyoruz.
 }
