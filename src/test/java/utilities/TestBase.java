@@ -146,7 +146,7 @@ public abstract class TestBase {
             }
         }
     }
-    // This can be used when a new page opens
+    // Yeni bir sayfa açıldığında bu kullanılabilir
     public static void waitForPageToload(long timeout){
         ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
            public Boolean apply(WebDriver driver){

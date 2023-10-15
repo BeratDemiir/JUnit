@@ -21,10 +21,29 @@ public class P18_Cookies extends TestBase {
         System.out.println("Sayfada "+cookieSaysi+" tane cookie var");
 
         // sayfadaki cookie lerin isim ve degerlerini yazdirin
-        // yeni bir cookie ekleyin
-        // yeni cookie ekledikten sonra cookie saysisini ve isimlerini yazdirin
-        // olusturdugumuz cookie i silelim
-        // Tum cookieleri  silelim
+        for (Cookie c : allCookies){
+            System.out.println(c.getName()+" "+c.getValue());
+        }
 
+        // yeni bir cookie ekleyin
+        Cookie myCookie = new Cookie("mtCookie" , "123456789");
+        driver.manage().addCookie(myCookie);
+
+        // yeni cookie ekledikten sonra cookie saysisini ve isimlerini yazdirin
+        Set<Cookie> allCookies2 = driver.manage().getCookies();
+        int cookieSayisi = allCookies2.size();
+        System.out.println("Sayfada "+cookieSayisi+" tane cookie var");
+
+        for (Cookie c : allCookies2){
+            System.out.println(c.getName()+" "+c.getValue());
+        }
+
+        // olusturdugumuz cookie i silelim
+        driver.manage().deleteCookie(myCookie);
+
+        // Tum cookieleri  silelim
+        driver.manage().deleteAllCookies();
+        Set<Cookie> allCookies3 = driver.manage().getCookies();
+        System.out.println(allCookies3.size());
     }
 }
