@@ -1,5 +1,6 @@
 package day0_practice;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -20,6 +21,8 @@ public class P20_Actions extends TestBase {
         driver.findElement(By.xpath("//div[.='Fleet']")).click();
 
         // Sayfa basliginin Fleet icerdigini test edelim.
+        switchToWindow(1);
+        Assert.assertTrue(driver.getTitle().contains("Fleet") );
 
     }
 }
