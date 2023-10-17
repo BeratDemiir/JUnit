@@ -181,14 +181,27 @@ public abstract class TestBase {
 
     // SCREENSHOTS
     public void takeScreenShotOfPage() throws IOException{
-        // Take ScreenShot
+        // Ekran Görüntüsü Al
         File image = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 
-        // 2. Save ScreenShot
-        // getting the current time as string to use in teh screenshot name, previous screenshots will be kept
+        // 2. Ekran Görüntüsünü Kaydet
+        // ekran görüntüsü adında kullanmak için geçerli saati dize olarak almak, önceki ekran görüntüleri saklanacaktır
         String currenTime = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
 
-        // path of screenshot save folder
+        // ekran görüntüsü kaydetme klasörünün yolu
+        String path = System.getProperty("user.dir")+ "/test-output/Screenshots/"+currenTime+"image.png";
+        FileUtils.copyFile(image,new File(path));
+    }
+
+    // TAKES SCREENSHOT
+    public void takeScreenshotOfElement(WebElement element) throws IOException{
+        // Ekran Görüntüsü Al
+        File image = element.getScreenshotAs(OutputType.FILE);
+
+        // Ekran Görüntüsünü Kaydet
+        String currenTime = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+
+        // ekran görüntüsü kaydetme klasörünün yolu
         String path = System.getProperty("user.dir")+ "/test-output/Screenshots/"+currenTime+"image.png";
         FileUtils.copyFile(image,new File(path));
     }
