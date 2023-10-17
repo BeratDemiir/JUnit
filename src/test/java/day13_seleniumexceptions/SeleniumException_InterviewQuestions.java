@@ -5,7 +5,7 @@ public class SeleniumException_InterviewQuestions {
 //   Seleniumda aldigin 5 exception?
         // Null pointer, no such element, time out, slale element, reference, web driver
 
-//    Genel olarak exception aldiginda bozum yolun nedir?
+//    Genel olarak exception aldiginda cozum yolun nedir?
        // Hata mesajini oku
        // Genel olarak zamanlama, yanlis locator, iframe hataları olabiliyor
        // Hata mesajina gore exception I cozdukden sonra tekrar kodumu calistirim
