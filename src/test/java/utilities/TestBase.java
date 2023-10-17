@@ -1,6 +1,7 @@
 package utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.*;
@@ -10,8 +11,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public abstract class TestBase {
@@ -172,5 +177,19 @@ public abstract class TestBase {
 
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
         return element;
+    }
+
+    // SCREENSHOTS
+    public void takeScreenShotOfPage() throws IOException{
+        // Take ScreenShot
+        File image = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+
+        // 2. Save ScreenShot
+        // getting the current time as string to use in teh screenshot name, previous screenshots will be kept
+        String currenTime = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+
+        // path of screenshot save folder
+        String path = System.getProperty("user.dir")+ "/test-output/Screenshots/"+currenTime+"image.png";
+        FileUtils.copyFile(image,new File(path));
     }
 }

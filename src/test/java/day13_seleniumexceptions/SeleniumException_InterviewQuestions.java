@@ -15,10 +15,10 @@ public class SeleniumException_InterviewQuestions {
 
 //   Hangi waiti tercih edersin?
     // Test Base (Driver sinifinda) implicit wait kullanıyorum.
-    // Cogu problemi bozuyor Cozemedigi durumlarda explicit wait kullanıyorum.
+    // Cogu problemi cozuyor Cozemedigi durumlarda explicit wait kullanıyorum.
 
 //   Neden Explicit wait?
-    // Explicit wait element e ouzel yazilabilir. Yerel cozum gerektiğinde explicit wait'i kullanmak zorundayiz.
+    // Explicit wait element e ozel yazilabilir. Yerel cozum gerektiğinde explicit wait'i kullanmak zorundayiz.
 
 //   Senkronize(bekleme) problemlerini nasıl çözersin?
     // Selenium waitlerini kullanarak. Implicit wait driver im da var, ama yetmedigi durumlarda explicit wait
