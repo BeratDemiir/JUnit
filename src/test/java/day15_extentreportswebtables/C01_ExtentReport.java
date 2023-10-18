@@ -3,6 +3,7 @@ package day15_extentreportswebtables;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import utilities.TestBase;
@@ -56,6 +57,18 @@ public class C01_ExtentReport extends TestBase {
     @Test
     public void extentReportsTest() {
 
+        extentTest.pass("Pass");
+        extentTest.info("Bilgilendirme Notu");
+        extentTest.fail("Failed");
+        extentTest.warning("Uyari Mesaji");
+        extentTest.skip("Atlama Mesaji");
+        extentTest.fatal("Cokus Hatasi");
 
+    }
+
+    @AfterClass
+    public static void setExtentReportTearDown() throws Exception {
+
+        extentReports.flush();
     }
 }
