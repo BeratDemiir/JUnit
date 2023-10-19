@@ -20,7 +20,7 @@ public class C03_WebTables extends TestBase {
 
     @Test
     public void printData() {
-
-        ikiParemetreLiTest(2,3);
+        ikiParemetreLiTest(2,3);// fbach@yahoo.com
+        ikiParemetreLiTest(1,4);// $50.00
     }
 }
