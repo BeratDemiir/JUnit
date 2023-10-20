@@ -235,4 +235,11 @@ public abstract class TestBase {
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].setAttribute('value','"+metin+"')",element);
     }
+
+    // Bu method input elementindeki degerleri al
+    public void getValueByJS(String idOfElement){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+       String metin = js.executeScript("return document.getElementById('"+idOfElement+"').value").toString();
+        System.out.println("Kutudaki deger : "+ metin);
+    }
 }
