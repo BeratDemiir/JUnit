@@ -43,5 +43,12 @@ public class C01_JsExecutors_Scroll extends TestBase {
         scrollIntoViewJS(blogs);
         waitFor(3);
         takeScreenShotOfPage();
+
+        // En uste git
+        scrollTabJs();
+        waitFor(3);
+
+        // En alta git
+        scrollEndJS();
     }
 }

@@ -211,4 +211,28 @@ public abstract class TestBase {
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].scrollIntoView(true)",element);
     }
+
+    // SAYFANIN EN ALTINA IN
+    public void scrollEndJS(){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+    }
+
+    // SAYFANIN EN USTUNE GIT
+    public void scrollTabJs(){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("window.scrollTo(0,-document.body.scrollHeight)");
+    }
+
+    // BU METHOD ILE BELIRLI BIR ELEMENTE JS EXECUTOR ILE TIKLANABILIR.
+    public void clickByJS(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click();",element);
+    }
+
+    // Girmis oldugum metni elemente yazdir. JS ile
+    public void typeWithJS(WebElement element, String metin){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].setAttribute('value','"+metin+"')",element);
+    }
 }
