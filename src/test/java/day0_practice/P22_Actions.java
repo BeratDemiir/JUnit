@@ -3,6 +3,7 @@ package day0_practice;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import utilities.TestBase;
 
 public class P22_Actions extends TestBase {
@@ -15,6 +16,7 @@ public class P22_Actions extends TestBase {
 
         // Cikan ekrana istediginiz cizgi yada sekli ciziniz
         WebElement yaziEkrani = driver.findElement(By.xpath("//div[@class='signature-pad--body']"));
+
 
         // Son olarak sayfayi temizleyin
     }
