@@ -25,7 +25,7 @@ public class Example1_Actions extends TestBase {
         select.selectByVisibleText("Turkey (Türkiye)");
 
         driver.findElement(By.xpath("(//span[@class='a-text-bold'])[3]")).click();
-
+        waitFor(3);
         driver.findElement(By.xpath("(//span[@class='a-button-inner'])[3]")).click();
         waitFor(3);
 
