@@ -18,7 +18,7 @@ public class C01_ScreenShot extends TestBase {
 
     /*
      Selenium tum ekran goruntusu nasil alinir?
-      --> Tum ekran goruntusu seleniumdan gelen getScreenshotAs methodu ile alinir
+      --> Tum ekran goruntusu seleniumdan gelen getScreenshotAs methodu ile alinir.
       --> getScreenShotAs method u seleniumdaki TakesScreenShot api indan gelir.
      */
 
@@ -48,7 +48,7 @@ public class C01_ScreenShot extends TestBase {
      String text = driver.findElement(By.xpath("//*[contains(text(),'Programs')]")).getText();
         Assert.assertTrue(expected.contains(text));
 
-        // Reusable method yardimiyla ekran goruntusunu alalim
+        // Reusable method yardimiyla ekran goruntusunu alalim.
         takeScreenShotOfPage();
     }
 }
