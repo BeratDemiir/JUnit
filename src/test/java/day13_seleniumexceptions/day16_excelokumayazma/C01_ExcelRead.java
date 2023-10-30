@@ -1,4 +1,4 @@
-package day16_excelokumayazma;
+package day13_seleniumexceptions.day16_excelokumayazma;
 
 import org.apache.poi.ss.usermodel.*;
 import org.junit.Assert;
@@ -26,30 +26,30 @@ public class C01_ExcelRead {
         Workbook workbook = WorkbookFactory.create(fileInputStream);
 
         // 2) Sayfayi Ac / Sheet1
-        //  Sheet sheet1 = workbook.getSheetAt(0);  index ile gitme
-        Sheet sheet1 = workbook.getSheet("Sayfa1");// Sayfa ismi ile gitme
+      //  Sheet sheet1 = workbook.getSheetAt(0);  index ile gitme
+       Sheet sheet1 = workbook.getSheet("Sayfa1");// Sayfa ismi ile gitme
 
         // Ilk satira git / Row
-        Row row1 = sheet1.getRow(0);// Ilk satira git
+       Row row1 = sheet1.getRow(0);// Ilk satira git
 
-        //  Ilk satirdaki ilk veriryi al
-        Cell cell1 = row1.getCell(0);// ilk hucredeki data yi al
+       //  Ilk satirdaki ilk veriryi al
+     Cell cell1 = row1.getCell(0);// ilk hucredeki data yi al
 
         // O veriyi yazdir
         System.out.println(cell1);// COUNTRY
 
         // 1. Satir 2. Sutun
-        Cell cell12 = sheet1.getRow(0).getCell(1);
+      Cell cell12 = sheet1.getRow(0).getCell(1);
         System.out.println(cell12);// CAPITAL
 
         // 3. Satir 1. Sutun elemani yazdir ve o verinin France oldugunu test et
-        String cell31 = sheet1.getRow(2).getCell(0).toString();
+       String cell31 = sheet1.getRow(2).getCell(0).toString();
         System.out.println(cell31);// France
 
         Assert.assertEquals("France",cell31);
 
         // Excel'deki Toplam satir sayisini bul
-        int toplamSatirS = sheet1.getLastRowNum()+1;// Son satir numarasi index sifirdan basliyor
+       int toplamSatirS = sheet1.getLastRowNum()+1;// Son satir numarasi index sifirdan basliyor
         System.out.println(toplamSatirS);// 11
 
         // kullanilan toplam satir sayisini bul
