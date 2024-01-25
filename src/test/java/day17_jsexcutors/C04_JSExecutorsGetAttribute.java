@@ -13,7 +13,7 @@ public class C04_JSExecutorsGetAttribute extends TestBase {
         driver.get("https://www.priceline.com");
 
 //        Tarih kısmındaki Yazili metinleri al ve yazdır
-            getValueByJS("hotelDates");
+        getValueByJS("hotelDates");
 
     }
 

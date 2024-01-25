@@ -14,8 +14,8 @@ public class C03_JSExecutorsSetAttribute extends TestBase {
         driver.get("https://www.techproeducation.com");
         waitFor(4);
 //        Arama kutusuna programs yaz
-       WebElement search = driver.findElement(By.id("searchHeaderInput"));
-       typeWithJS(search,"programs");
-       waitFor(3);
+        WebElement search = driver.findElement(By.id("searchHeaderInput"));
+        typeWithJS(search, "programs");
+        waitFor(3);
     }
 }

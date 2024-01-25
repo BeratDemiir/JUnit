@@ -46,10 +46,10 @@ public class C01_ExcelRead {
         String cell31 = sheet1.getRow(2).getCell(0).toString();
         System.out.println(cell31);// France
 
-        Assert.assertEquals("France",cell31);
+        Assert.assertEquals("France", cell31);
 
         // Excel'deki Toplam satir sayisini bul
-        int toplamSatirS = sheet1.getLastRowNum()+1;// Son satir numarasi index sifirdan basliyor
+        int toplamSatirS = sheet1.getLastRowNum() + 1;// Son satir numarasi index sifirdan basliyor
         System.out.println(toplamSatirS);// 11
 
         // kullanilan toplam satir sayisini bul
@@ -60,10 +60,10 @@ public class C01_ExcelRead {
 
         // Variable olusturalim Bu variable exceldeki country,capital verilerini tutacak
         Map<String, String> ulkeBaskentleri = new HashMap<>();
-        for (int satirSayisi=1; satirSayisi<kullanilantoplamSatirS; satirSayisi++){
+        for (int satirSayisi = 1; satirSayisi < kullanilantoplamSatirS; satirSayisi++) {
             String country = sheet1.getRow(satirSayisi).getCell(0).toString();
             String capital = sheet1.getRow(satirSayisi).getCell(1).toString();
-            ulkeBaskentleri.put(country,capital);
+            ulkeBaskentleri.put(country, capital);
         }
         System.out.println(ulkeBaskentleri);
     }
