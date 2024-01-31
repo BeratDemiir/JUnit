@@ -22,8 +22,8 @@ import java.util.List;
 public abstract class TestBase {
 
     // TestBase i abstract yapmamizin sebebi bu sinifin objesini olusturmak istemiyorum
-   //  TestBase testBase = new TestBase(); -> YAPILMAZ
-   // Amacim bu sinifi extend etmek ve icindeki hazir methodlari kullanmak
+    //  TestBase testBase = new TestBase(); -> YAPILMAZ
+    // Amacim bu sinifi extend etmek ve icindeki hazir methodlari kullanmak
     // driver objesini olustur. Driver ya public yada protected olmali. Sebebi child class larda gorulebilmesi
     protected static WebDriver driver;
 
@@ -33,7 +33,7 @@ public abstract class TestBase {
 //        WebDriverManager.chromedriver().setup();
 //        driver = new ChromeDriver();
         // ustteki method yerine asagidakini kullanabiliriz.
-        driver=WebDriverManager.chromedriver().create();
+        driver = WebDriverManager.chromedriver().create();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
@@ -50,11 +50,11 @@ public abstract class TestBase {
     // Ornek:
     //   driver.get("https://the-internet.herokuapp.com/windows");
     //   switchToWindow("Nem Window");
-    public static void switchToWindow(String targetTitle){
+    public static void switchToWindow(String targetTitle) {
         String origin = driver.getWindowHandle();
-        for (String handle : driver.getWindowHandles()){
+        for (String handle : driver.getWindowHandles()) {
             driver.switchTo().window(handle);
-            if (driver.getTitle().equals(targetTitle)){
+            if (driver.getTitle().equals(targetTitle)) {
                 return; // Cik  break;
             }
         }
@@ -63,112 +63,122 @@ public abstract class TestBase {
 
     // windowNumber sifir dan basliyor.
     // index numarasini parametre olarak alir ve o indexli pencereye gecis yapar.
-    public static void switchToWindow(int windowNumber){
+    public static void switchToWindow(int windowNumber) {
         List<String> list = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(list.get(windowNumber));
     }
 
-    public static void waitFor(int seconds){
+    public static void waitFor(int seconds) {
         try {
-            Thread.sleep(seconds* 1000);
-        }catch (InterruptedException e){
+            Thread.sleep(seconds * 1000);
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
     //  ACTIONS RIGHT CLICK
-    public static void rightClickOnElementActions(WebElement element){
+    public static void rightClickOnElementActions(WebElement element) {
         Actions actions = new Actions(driver);
         actions.contextClick(element).perform();
     }
 
     //  ACTIONS DOUBLE CLICK
-    public static void doubleClick(WebElement element){
+    public static void doubleClick(WebElement element) {
         new Actions(driver).doubleClick(element).build().perform();
     }
+
     // ACTIONS HOVER OVER
-    public static void hoverOverOnElementActions(WebElement element){
+    public static void hoverOverOnElementActions(WebElement element) {
         // Actions actions = new Actions(driver);
         new Actions(driver).moveToElement(element).perform();
     }
+
     // ACTIONS SCROLL DOWN
-    public static void scrollDownActions(){
+    public static void scrollDownActions() {
         // Actions actions = new Actions(driver);
         new Actions(driver).sendKeys(Keys.PAGE_DOWN).perform();
     }
+
     // ACTIONS SCROLL UP
-    public static void scrollUpActions(){
+    public static void scrollUpActions() {
         // Actions actions = new Actions(driver);
         new Actions(driver).sendKeys(Keys.PAGE_UP).perform();
     }
-   // ACTIONS SCROLL RIGHT
-    public static void scrollRightActions(){
+
+    // ACTIONS SCROLL RIGHT
+    public static void scrollRightActions() {
         new Actions(driver).sendKeys(Keys.ARROW_RIGHT).sendKeys(Keys.ARROW_RIGHT).perform();
     }
+
     // ACTIONS SCROLL LEFT
-    public static void scrollLeftActions(){
+    public static void scrollLeftActions() {
         new Actions(driver).sendKeys(Keys.ARROW_LEFT).sendKeys(Keys.ARROW_LEFT).perform();
     }
+
     // ACTIONS DRAG AND DROP
-    public static void dragAndDropActions(WebElement source, WebElement target){
+    public static void dragAndDropActions(WebElement source, WebElement target) {
         // Actions actions = new Actions(driver);
         new Actions(driver).dragAndDrop(source, target).perform();
     }
+
     // ACTIONS DRAG AND DROP BY
-    public static void dragAndDropByActions(WebElement source, int x, int y){
+    public static void dragAndDropByActions(WebElement source, int x, int y) {
         // Actions actions = new Actions(driver);
         new Actions(driver).dragAndDropBy(source, x, y).perform();
     }
 
     //         DYNAMIC SELENIUM WAITS:
- // ----------------EXPLİCİT WAİT----------------
-    public static WebElement waitForVisibility(WebElement element,int timeout){
+    // ----------------EXPLİCİT WAİT----------------
+    public static WebElement waitForVisibility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public static WebElement waitForVisibility(By locator, int timeout){
+    public static WebElement waitForVisibility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
-    public static WebElement waitForClickAblility(WebElement element, int timeout){
+
+    public static WebElement waitForClickAblility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public static WebElement waitForClickAblility(By locator, int timeout){
+    public static WebElement waitForClickAblility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
-    public static void clickWithTimeOut(WebElement element, int timeout){
-        for (int i =0; i< timeout; i++){
+    public static void clickWithTimeOut(WebElement element, int timeout) {
+        for (int i = 0; i < timeout; i++) {
             try {
                 element.click();
                 return;
-            }catch (WebDriverException e){
+            } catch (WebDriverException e) {
                 waitFor(1);
             }
         }
     }
+
     // Yeni bir sayfa açıldığında bu kullanılabilir
-    public static void waitForPageToload(long timeout){
+    public static void waitForPageToload(long timeout) {
         ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
-           public Boolean apply(WebDriver driver){
-               return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
-           }
+            public Boolean apply(WebDriver driver) {
+                return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
+            }
         };
         try {
             System.out.println("Waiting for page to load...");
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
             wait.until(expectation);
-        }catch (Throwable error){
+        } catch (Throwable error) {
             System.out.println("Timeout waiting for page Load Request to complete after" + timeout + " seconds");
         }
     }
+
     // -----------FLUENT WAIT--------------
     // params: öğenin xpath'i, saniye cinsinden maksimum zaman aşımı, saniye cinsinden yoklama
-    public static WebElement fluentWait(String xpath, int withTimeOut, int pollingEvery){
+    public static WebElement fluentWait(String xpath, int withTimeOut, int pollingEvery) {
         FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
                 .withTimeout(Duration.ofSeconds(withTimeOut))// her defasinda 3 saniye bekleyin
                 .pollingEvery(Duration.ofSeconds(pollingEvery))// her 1 saniyede bir elemani kontrol edin
@@ -180,21 +190,21 @@ public abstract class TestBase {
     }
 
     // SCREENSHOTS
-    public void takeScreenShotOfPage() throws IOException{
+    public void takeScreenShotOfPage() throws IOException {
         // Ekran Görüntüsü Al
-        File image = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        File image = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
         // 2. Ekran Görüntüsünü Kaydet
         // ekran görüntüsü adında kullanmak için geçerli saati dize olarak almak, önceki ekran görüntüleri saklanacaktır
         String currenTime = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
 
         // ekran görüntüsü kaydetme klasörünün yolu
-        String path = System.getProperty("user.dir")+ "/test-output/Screenshots/"+currenTime+"image.png";
-        FileUtils.copyFile(image,new File(path));
+        String path = System.getProperty("user.dir") + "/test-output/Screenshots/" + currenTime + "image.png";
+        FileUtils.copyFile(image, new File(path));
     }
 
     // TAKES SCREENSHOT
-    public void takeScreenshotOfElement(WebElement element) throws IOException{
+    public void takeScreenshotOfElement(WebElement element) throws IOException {
         // Ekran Görüntüsü Al
         File image = element.getScreenshotAs(OutputType.FILE);
 
@@ -202,44 +212,44 @@ public abstract class TestBase {
         String currenTime = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
 
         // ekran görüntüsü kaydetme klasörünün yolu
-        String path = System.getProperty("user.dir")+ "/test-output/Screenshots/"+currenTime+"image.png";
-        FileUtils.copyFile(image,new File(path));
+        String path = System.getProperty("user.dir") + "/test-output/Screenshots/" + currenTime + "image.png";
+        FileUtils.copyFile(image, new File(path));
     }
 
     // SCROLLINTOVİEWJS
-    public void scrollIntoViewJS(WebElement element){
-        JavascriptExecutor js = (JavascriptExecutor)driver;
-        js.executeScript("arguments[0].scrollIntoView(true)",element);
+    public void scrollIntoViewJS(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true)", element);
     }
 
     // SAYFANIN EN ALTINA IN
-    public void scrollEndJS(){
-        JavascriptExecutor js = (JavascriptExecutor)driver;
+    public void scrollEndJS() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
     }
 
     // SAYFANIN EN USTUNE GIT
-    public void scrollTabJs(){
-        JavascriptExecutor js = (JavascriptExecutor)driver;
+    public void scrollTabJs() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollTo(0,-document.body.scrollHeight)");
     }
 
     // BU METHOD ILE BELIRLI BIR ELEMENTE JS EXECUTOR ILE TIKLANABILIR.
-    public void clickByJS(WebElement element){
-        JavascriptExecutor js = (JavascriptExecutor)driver;
-        js.executeScript("arguments[0].click();",element);
+    public void clickByJS(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", element);
     }
 
     // Girmis oldugum metni elemente yazdir. JS ile
-    public void typeWithJS(WebElement element, String metin){
-        JavascriptExecutor js = (JavascriptExecutor)driver;
-        js.executeScript("arguments[0].setAttribute('value','"+metin+"')",element);
+    public void typeWithJS(WebElement element, String metin) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].setAttribute('value','" + metin + "')", element);
     }
 
     // Bu method input elementindeki degerleri al
-    public void getValueByJS(String idOfElement){
-        JavascriptExecutor js = (JavascriptExecutor)driver;
-       String metin = js.executeScript("return document.getElementById('"+idOfElement+"').value").toString();
-        System.out.println("Kutudaki deger : "+ metin);
+    public void getValueByJS(String idOfElement) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        String metin = js.executeScript("return document.getElementById('" + idOfElement + "').value").toString();
+        System.out.println("Kutudaki deger : " + metin);
     }
 }

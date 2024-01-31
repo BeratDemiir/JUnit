@@ -27,7 +27,7 @@ public class C02_WriteExcel {
         Row row1 = sheet1.getRow(0);// Ilk satira git
 
         // Ilk satir 3. Sutun u create et
-        Cell cell3 =  row1.createCell(2);
+        Cell cell3 = row1.createCell(2);
 
         // o satira Nufus yaz
         cell3.setCellValue("NUFUS");
