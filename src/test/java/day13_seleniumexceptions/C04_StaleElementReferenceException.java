@@ -44,7 +44,7 @@ public class C04_StaleElementReferenceException extends TestBase {
         lmsLogin.click();
 
         // Cozum eski elementi tekrar locate et
-      //  driver.findElement(By.xpath("//a[.='Login']"));
+        //  driver.findElement(By.xpath("//a[.='Login']"));
 
     }
 }

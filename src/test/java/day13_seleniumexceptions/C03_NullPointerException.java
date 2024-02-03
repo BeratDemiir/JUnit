@@ -14,8 +14,9 @@ public class C03_NullPointerException {
     //Solution: COZUM
     // Degiskeni instantiate et
 
-    WebDriver driver ;
+    WebDriver driver;
     Faker faker;
+
     @Test
     public void nullPointerTest() {
 
@@ -24,7 +25,7 @@ public class C03_NullPointerException {
 
     @Test
     public void npe() {
-      // Cozumu bu:  faker = new Faker();
+        // Cozumu bu:  faker = new Faker();
         System.out.println(faker.name().fullName());// java.lang.NullPointerException
     }
 }

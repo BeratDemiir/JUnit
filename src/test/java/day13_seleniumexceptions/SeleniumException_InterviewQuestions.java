@@ -3,15 +3,15 @@ package day13_seleniumexceptions;
 public class SeleniumException_InterviewQuestions {
 
 //   Seleniumda aldigin 5 exception?
-        // Null pointer, no such element, time out, slale element, reference, web driver
+    // Null pointer, no such element, time out, slale element, reference, web driver
 
 //    Genel olarak exception aldiginda cozum yolun nedir?
-       // Hata mesajini oku
-       // Genel olarak zamanlama, yanlis locator, iframe hataları olabiliyor
-       // Hata mesajina gore exception I cozdukden sonra tekrar kodumu calistirim
+    // Hata mesajini oku
+    // Genel olarak zamanlama, yanlis locator, iframe hataları olabiliyor
+    // Hata mesajina gore exception I cozdukden sonra tekrar kodumu calistirim
 
 //   Selniumda kullandigin waitler nelerdir>
-      // Implicit yada explicit yada fluent
+    // Implicit yada explicit yada fluent
 
 //   Hangi waiti tercih edersin?
     // Test Base (Driver sinifinda) implicit wait kullanıyorum.

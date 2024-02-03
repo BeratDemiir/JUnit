@@ -29,23 +29,23 @@ public class C01_ScreenShot extends TestBase {
         driver.get("https://www.techproeducation.com");
 
         //1.) Bu method ile ekran goruntusu alindi
-        File goruntu = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        File goruntu = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
         //2.) Almis oldugum ekran goruntusunu belirledigim bir path'e kaydet
         // Note: kayit ismini dinamik yapmak icin date objesi kullandim
         String currentDate = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-        String path = System.getProperty("user.dir")+ "/test-output/EkranGoruntuleri/"+currentDate+"image.png";
+        String path = System.getProperty("user.dir") + "/test-output/EkranGoruntuleri/" + currentDate + "image.png";
 
         //3.) Goruntum ile dosyayi birlestirip kaydet
         File hedef = new File(path);
-        FileUtils.copyFile(goruntu,hedef);
+        FileUtils.copyFile(goruntu, hedef);
 
 //        2.-“QA” aramasi yap
         driver.findElement(By.id("searchHeaderInput")).sendKeys("Mobile Developer" + Keys.ENTER);
 
 //        3.Acilen sayfanin metnini test et ve ekran goruntusu al: “Search Results for:"qa”
         String expected = "Programs";
-     String text = driver.findElement(By.xpath("//*[contains(text(),'Programs')]")).getText();
+        String text = driver.findElement(By.xpath("//*[contains(text(),'Programs')]")).getText();
         Assert.assertTrue(expected.contains(text));
 
         // Reusable method yardimiyla ekran goruntusunu alalim.
