@@ -10,13 +10,13 @@ import utilities.TestBase;
 public class C01_Actions extends TestBase {
 
     //  1.Adım: Actions class’ta bir object oluşturulur.
-            // Actions actions= new Actions(driver);
+    // Actions actions= new Actions(driver);
 
     //  2. Adım: Üzerinde çalışmak istediğiniz WebElement öğesini bulunur.
-           // WebElement element = driver.findElement(locator);
+    // WebElement element = driver.findElement(locator);
 
     //  3.Adim : perform() kullanarak bu webelement üzerinde action  gerçekleştirilir.
-          // actions.contextClick(element).perform( );
+    // actions.contextClick(element).perform( );
     @Test
     public void rightClick() {
 
@@ -30,7 +30,7 @@ public class C01_Actions extends TestBase {
         actions.contextClick(element).perform();
 
         //   Alert’te cikan yazinin “You selected a context menu” oldugunu test edin
-          // Alert deki mesaji test etmek icin alert'in icine girmemiz gerekiyor.
+        // Alert deki mesaji test etmek icin alert'in icine girmemiz gerekiyor.
         Assert.assertEquals("You selected a context menu", driver.switchTo().alert().getText());
 
         //   Tamam diyerek alert’i kapatın

@@ -10,7 +10,7 @@ import utilities.TestBase;
 public class C02_Actions extends TestBase {
 
     @Test
-    public void  hoverOver() {
+    public void hoverOver() {
 
         //  Amazon a gidelim https://www.amazon.com/
         driver.get("https://www.amazon.com/");
