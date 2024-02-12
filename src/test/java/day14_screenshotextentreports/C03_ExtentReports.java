@@ -22,7 +22,7 @@ public class C03_ExtentReports extends TestBase {
 
         // Rapor yolu
         String currenTime = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-        String path = System.getProperty("user.dir")+ "/test-output/reports/"+currenTime+"html_report.html";
+        String path = System.getProperty("user.dir") + "/test-output/reports/" + currenTime + "html_report.html";
 
         // HTML raporu oluşturma yolu
         extentHtmlReporter = new ExtentHtmlReporter(path);
@@ -49,7 +49,7 @@ public class C03_ExtentReports extends TestBase {
         extentReports.attachReporter(extentHtmlReporter);
 
         // Extent test objesini olusturduk
-        extentTest = extentReports.createTest("Extent Report Login Test","Smoke Test Raporu");
+        extentTest = extentReports.createTest("Extent Report Login Test", "Smoke Test Raporu");
 
         // TUM AYARLAR BITTI EXTENT TEST OBJESI ILE LOGLAMA ISLEMINI YAPABILIRIM
         extentTest.pass("Kullanıcı ana sayfaya gider");

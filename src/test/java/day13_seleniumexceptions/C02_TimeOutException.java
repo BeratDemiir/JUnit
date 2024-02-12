@@ -33,7 +33,7 @@ Solution: COZUM
         driver.get("https://www.techproeducation.com");
         // Explit wait icin olusturdugumuz methodlardan birini kullanalim
         // Paremtre 1: Beklemek istedigim element      Paremetre 2: Max sure
-        waitForVisibility(By.xpath("//input[@type=' textt']"),15)// org.openqa.selenium.TimeoutException
+        waitForVisibility(By.xpath("//input[@type=' textt']"), 15)// org.openqa.selenium.TimeoutException
                 .sendKeys("QA" + Keys.ENTER);
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
