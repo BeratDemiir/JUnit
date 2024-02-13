@@ -19,6 +19,7 @@ public class C03_WindowHandle extends TestBase {
         waitFor(3);
         driver.switchTo().newWindow(WindowType.WINDOW);// i) yeni pencere olusturur ii) oraya gecis yapar.
         driver.get("https://www.Amazon.com");
+
         Assert.assertTrue(driver.getTitle().contains("Amazon"));
         String amazonHandle = driver.getWindowHandle();
 

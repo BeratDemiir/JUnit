@@ -18,6 +18,7 @@ public class C02_WindowHandle extends TestBase {
        String expectedW1Text = "Opening a new window";
         Assert.assertEquals(expectedW1Text,actualWindow1Text);
 
+
         // ● Sayfa başlığının(title) “The Internet” olduğunu doğrulayın.
         String actualW1Title = driver.getTitle();
         String expectedW1Title ="The Internet";
