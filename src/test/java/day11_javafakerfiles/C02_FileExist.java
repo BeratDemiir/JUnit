@@ -19,7 +19,7 @@ public class C02_FileExist {
         String dosyaYolu = userHome + "/OneDrive/Masaüstü/logo.jpeg.png";
         System.out.println(dosyaYolu); //   C:\Users\LENOVO\OneDrive\Masaüstü
 
-       boolean isExist = Files.exists(Paths.get(dosyaYolu));
+        boolean isExist = Files.exists(Paths.get(dosyaYolu));
         System.out.println(isExist); // true
     }
 }

@@ -6,15 +6,16 @@ import org.junit.Test;
 public class C01_JavaFaker {
 
     Faker faker;
+
     @Test
     public void javaFakerTest() {
-     // Faker objesi olustur.
+        // Faker objesi olustur.
         faker = new Faker();
 
         // Faker objesi ile fake data olustur
 
         // first name datasi
-       String fName = faker.name().firstName();
+        String fName = faker.name().firstName();
         System.out.println(fName);
 
         // last name datasi
