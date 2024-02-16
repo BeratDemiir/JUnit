@@ -21,13 +21,13 @@ public class C05_Actions extends TestBase {
         // Ve ENTER tusuna bas
 
         WebElement aramaKutusu = driver.findElement(By.id("APjFqb"));
-       // aramaKutusu.sendKeys("iphone x fiyatlari" + Keys.ENTER);
+        // aramaKutusu.sendKeys("iphone x fiyatlari" + Keys.ENTER);
 
         Actions actions = new Actions(driver);
         actions
-                .keyDown(aramaKutusu,Keys.SHIFT)// Arama kutusunun ustunde Shift tusuna bas
+                .keyDown(aramaKutusu, Keys.SHIFT)// Arama kutusunun ustunde Shift tusuna bas
                 .sendKeys("iphone x fiyatlari")// shifte basiliyken bu yaziyi yaz
-                .keyUp(aramaKutusu,Keys.SHIFT)// shifte artik basma
+                .keyUp(aramaKutusu, Keys.SHIFT)// shifte artik basma
                 .sendKeys(" cok pahali!" + Keys.ENTER)// normal halde yaz ve enter tusuna bas.
                 .build()// Birden fazla actions method kullanildiginda build() kullanilmasi onerilir.
                 .perform();

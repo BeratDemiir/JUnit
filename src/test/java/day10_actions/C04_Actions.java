@@ -17,11 +17,11 @@ public class C04_Actions extends TestBase {
         //And user moves the target element(Drag me to my target) in to  destination(Drop here)
         //  iframe icinde islem yapmak icin iframe'in icine girmek gerekir
         driver.switchTo().frame(0);
-      WebElement kaynak = driver.findElement(By.xpath("//*[@id='draggable']"));
-      WebElement hedef  = driver.findElement(By.xpath("//*[@id='droppable']"));
+        WebElement kaynak = driver.findElement(By.xpath("//*[@id='draggable']"));
+        WebElement hedef = driver.findElement(By.xpath("//*[@id='droppable']"));
 
         Actions actions = new Actions(driver);
-        actions.dragAndDrop(kaynak,hedef).perform(); // En cok kullanilan method budur.
+        actions.dragAndDrop(kaynak, hedef).perform(); // En cok kullanilan method budur.
     }
 
     @Test
@@ -34,7 +34,7 @@ public class C04_Actions extends TestBase {
         //  iframe icinde islem yapmak icin iframe'in icine girmek gerekir
         driver.switchTo().frame(0);
         WebElement kaynak = driver.findElement(By.xpath("//*[@id='draggable']"));
-        WebElement hedef  = driver.findElement(By.xpath("//*[@id='droppable']"));
+        WebElement hedef = driver.findElement(By.xpath("//*[@id='droppable']"));
 
         Actions actions = new Actions(driver);
         actions
@@ -58,7 +58,7 @@ public class C04_Actions extends TestBase {
 
         Actions actions = new Actions(driver);
         // Bu method kaynagi istenilen kordinata surukler
-        actions.clickAndHold(kaynak).moveByOffset(430,30).release().build().perform();
+        actions.clickAndHold(kaynak).moveByOffset(430, 30).release().build().perform();
 
     }
 }
