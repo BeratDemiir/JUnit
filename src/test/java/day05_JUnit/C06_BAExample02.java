@@ -16,12 +16,13 @@ public class C06_BAExample02 {
     WebDriver driver;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
+
     @After
     public void tearDown() throws InterruptedException {
         Thread.sleep(3000);
@@ -43,7 +44,7 @@ public class C06_BAExample02 {
         WebElement custom = driver.findElement(By.xpath("//input[@value='-1']"));
 
         //  Secili degilse cinsiyet butonundan size uygun olani secin
-        if (!male.isSelected()){
+        if (!male.isSelected()) {
             male.click();
         }
         Thread.sleep(3000);
