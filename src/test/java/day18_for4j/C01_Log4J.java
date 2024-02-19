@@ -16,6 +16,7 @@ public class C01_Log4J {
 //        Consoldeki loglari kontrol edelim. Default olarak error or fatal gorunmus olacaktır
 
     private static Logger logger = LogManager.getLogger(C01_Log4J.class.getName());
+
     @Test
     public void log4JTest() {
         // Logger fonksiyonuyla istenilen fonksiyonu kullan

@@ -22,7 +22,7 @@ public class KeyboardBaseActions1 extends TestBase {
         driver.findElement(By.xpath("(//a[.='Link 1'])[1]")).click();
 
         // 4. Popup mesajini yazdirin
-      String popupMessage = driver.switchTo().alert().getText();
+        String popupMessage = driver.switchTo().alert().getText();
         System.out.println(popupMessage);
 
         // 5. Popup'i tamam diyerek kapatin
