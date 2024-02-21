@@ -22,7 +22,7 @@ public class P11_CheckBox extends TestBase {
         WebElement checkbox3 = driver.findElement(By.id("xxx"));
 
         // checkbox1 ve checkbox3 secili degil ise secin
-        if (!checkbox1.isSelected()){
+        if (!checkbox1.isSelected()) {
             checkbox1.click();
         } else if (!checkbox3.isSelected()) {
             checkbox3.click();
