@@ -23,7 +23,7 @@ public class P12_RadioButton extends TestBase {
         WebElement Option3 = driver.findElement(By.id("xxx"));
 
         // Option2'yi secin
-       Option2.click();
+        Option2.click();
 
         // Option2 elementinin secili oldugunu test edelim
         Assert.assertTrue(Option2.isSelected());
