@@ -17,6 +17,7 @@ import java.util.List;
 public class P09_Dropdown {
 
     WebDriver driver;
+
     @Before
     public void setUp() throws Exception {
         WebDriverManager.chromedriver().setup();
@@ -27,18 +28,18 @@ public class P09_Dropdown {
 
     @Test
     public void test1() {
-       driver.get("https://www.amazon.com");
+        driver.get("https://www.amazon.com");
         WebElement dropdown = driver.findElement(By.xpath("//*[@id='searchDropdownBox']"));
         Select dropdownclick = new Select(dropdown);
         dropdownclick.selectByVisibleText("Baby");
         String varsayilanText = dropdownclick.getFirstSelectedOption().getText();
         System.out.println("varsayilanText = " + varsayilanText);
-        Assert.assertEquals("Baby",varsayilanText);
+        Assert.assertEquals("Baby", varsayilanText);
 
         List<WebElement> tumoptions = dropdownclick.getOptions();
         int sayi = 28;
         int sayi2 = tumoptions.size();
-        Assert.assertEquals(sayi,sayi2);
+        Assert.assertEquals(sayi, sayi2);
     }
 
     @After

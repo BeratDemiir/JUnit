@@ -15,6 +15,7 @@ import java.time.Duration;
 public class P07 {
 
     static WebDriver driver;
+
     @BeforeClass
     public static void beforeClass() throws Exception {
         WebDriverManager.chromedriver().setup();
@@ -26,18 +27,18 @@ public class P07 {
     @Test
     public void test01() {
         driver.get("https://www.google.com");
-       String actualTitle = driver.getTitle();
-       String exceptedTitle = "Google";
+        String actualTitle = driver.getTitle();
+        String exceptedTitle = "Google";
         Assert.assertTrue(actualTitle.contains(exceptedTitle));
         WebElement search = driver.findElement(By.xpath("//*[@class='gLFyf']"));
         search.sendKeys("nutella", Keys.ENTER);
-       String[] sonuc = (driver.findElement(By.xpath("//*[@id='result-stats']")).getText().split(" "));
-       String sonucSayisi = sonuc[1];
+        String[] sonuc = (driver.findElement(By.xpath("//*[@id='result-stats']")).getText().split(" "));
+        String sonucSayisi = sonuc[1];
         System.out.println("sonucSayisi = " + sonucSayisi);
 
-        sonucSayisi = sonucSayisi.replaceAll("\\D","");
-        int istenenSayi=100000000;
-        Assert.assertTrue(Integer.parseInt(sonucSayisi)>istenenSayi);
+        sonucSayisi = sonucSayisi.replaceAll("\\D", "");
+        int istenenSayi = 100000000;
+        Assert.assertTrue(Integer.parseInt(sonucSayisi) > istenenSayi);
         driver.close();
-   }
+    }
 }

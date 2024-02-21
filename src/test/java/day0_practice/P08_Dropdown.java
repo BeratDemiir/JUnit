@@ -17,6 +17,7 @@ import java.time.Duration;
 public class P08_Dropdown {
 
     WebDriver driver;
+
     @Before
     public void setUp() throws Exception {
         WebDriverManager.chromedriver().setup();
@@ -30,14 +31,14 @@ public class P08_Dropdown {
 
         driver.get("https://www.amazon.com");
         Thread.sleep(3000);
-       WebElement dropdown = driver.findElement(By.xpath("//*[@id='searchDropdownBox']"));
+        WebElement dropdown = driver.findElement(By.xpath("//*[@id='searchDropdownBox']"));
         Select dropdownclick = new Select(dropdown);
         Thread.sleep(3000);
         dropdownclick.selectByVisibleText("Books");
-       WebElement search = driver.findElement(By.id("twotabsearchtextbox"));
-       search.sendKeys("Java", Keys.ENTER);
-       String actualTitle = driver.getTitle();
-       String title ="Java";
+        WebElement search = driver.findElement(By.id("twotabsearchtextbox"));
+        search.sendKeys("Java", Keys.ENTER);
+        String actualTitle = driver.getTitle();
+        String title = "Java";
         Assert.assertTrue(actualTitle.contains(title));
     }
 
