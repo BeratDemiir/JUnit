@@ -40,7 +40,7 @@ public class P15_WindowHandle extends TestBase {
         // ilk acilan sayfaya donun ve amazon sayfasina dondugunuzu test edin.
         driver.switchTo().window(amazonWindow);
         String actualUrl = driver.getCurrentUrl();
-        String amzUrl ="https://www.amazon.com/";
-        Assert.assertEquals(amzUrl,actualUrl);
+        String amzUrl = "https://www.amazon.com/";
+        Assert.assertEquals(amzUrl, actualUrl);
     }
 }
