@@ -14,7 +14,7 @@ public class P14_Iframe1 extends TestBase {
         driver.get("https://demo.guru99.com/test/guru99home/");
 
         // sayfadaki iframe sayisini bulunuz
-      int toplamIframe = driver.findElements(By.tagName("iframe")).size();
+        int toplamIframe = driver.findElements(By.tagName("iframe")).size();
         System.out.println(toplamIframe);
 
         // ilk iframe'deki (youtube) play butonuna tiklayin.

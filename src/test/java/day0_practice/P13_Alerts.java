@@ -11,15 +11,15 @@ public class P13_Alerts extends TestBase {
     @Test
     public void test1() {
 
-       driver.get("https://demo.automationtesting.in/Alerts.html");
+        driver.get("https://demo.automationtesting.in/Alerts.html");
 
-     WebElement alert = driver.findElement(By.xpath("//*[@onclick='alertbox()']")); // Alert with ok bolumunu locate ettim
-     alert.click(); // cıkan yaziya tikladim.
+        WebElement alert = driver.findElement(By.xpath("//*[@onclick='alertbox()']")); // Alert with ok bolumunu locate ettim
+        alert.click(); // cıkan yaziya tikladim.
         System.out.println(driver.switchTo().alert().getText());// gelen bildirimi yazdirdim
         driver.switchTo().alert().accept(); // Alerte tamam a bastik
 
         driver.findElement(By.xpath("(//a[@class='analystic'])[2]")).click();
-        WebElement alert2 =  driver.findElement(By.xpath("//*[@class='btn btn-primary']"));
+        WebElement alert2 = driver.findElement(By.xpath("//*[@class='btn btn-primary']"));
         alert2.click();
 //        System.out.println(driver.switchTo().alert().getText());
 //        driver.switchTo().alert().accept();
@@ -35,8 +35,8 @@ public class P13_Alerts extends TestBase {
         waitFor(3);
 
         System.out.println(driver.findElement(By.id("demo1")).getText());
-        Assert.assertEquals("Hello TechProEducation How are you today" ,
-                                   driver.findElement(By.id("demo1")).getText());
+        Assert.assertEquals("Hello TechProEducation How are you today",
+                driver.findElement(By.id("demo1")).getText());
 
     }
 }
