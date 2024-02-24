@@ -10,12 +10,12 @@ public class P19_Actions extends TestBase {
 
     @Test
     public void test1() {
-       //  https://www.google.com/ sayfasina gidelim
+        //  https://www.google.com/ sayfasina gidelim
         driver.get("https://www.google.com");
 
-       //  Buyuk kucuk harf olucak sekilde "HeLlo" yazdiralim
+        //  Buyuk kucuk harf olucak sekilde "HeLlo" yazdiralim
         WebElement search = driver.findElement(By.xpath("//*[@class='gLFyf']"));
-        search.sendKeys(Keys.SHIFT,"h",Keys.SHIFT,"e",Keys.SHIFT,"l");
+        search.sendKeys(Keys.SHIFT, "h", Keys.SHIFT, "e", Keys.SHIFT, "l");
 
     }
 }
