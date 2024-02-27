@@ -21,7 +21,7 @@ public class C02_Maven {
         driver.get("http://zero.webappsecurity.com");
 
         // Signin buttonuna tiklayin
-            driver.findElement(By.xpath("//*[@class='icon-signin']")).click();
+        driver.findElement(By.xpath("//*[@class='icon-signin']")).click();
 
         // Login alanine  “username” yazdirin
         WebElement login = driver.findElement(By.xpath("//*[@id='user_login']"));
@@ -52,9 +52,9 @@ public class C02_Maven {
 
         // “The payment was successfully submitted.” mesajinin ciktigini control edin
         WebElement message = driver.findElement(By.xpath("//*[text()='The payment was successfully submitted.']"));
-        if (message.isDisplayed()){
+        if (message.isDisplayed()) {
             System.out.println("TEST PASSED");
-        }else {
+        } else {
             System.out.println("TEST PASSED");
         }
 
