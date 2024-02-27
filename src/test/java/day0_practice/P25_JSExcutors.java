@@ -18,15 +18,15 @@ public class P25_JSExcutors extends TestBase {
 
         // Arama bolumnunde selenium aratin
         WebElement searchBox = (WebElement) js.executeScript("return document.querySelector('input[id=twotabsearchtextbox');");
-        js.executeScript("arguments[0].value='selenium'",searchBox);
+        js.executeScript("arguments[0].value='selenium'", searchBox);
 
         // Back to top bolumune kadar scroll yapiniz
         WebElement backToTop = (WebElement) js.executeScript("return document.getElementsByClassName('navFooterBackToTopText')[0];");
-        js.executeScript("arguments[0].scrollIntoView(true);",backToTop);
+        js.executeScript("arguments[0].scrollIntoView(true);", backToTop);
 
         // Back to top bolumune tiklayiniz
         waitFor(2);
-        js.executeScript("arguments[0].click();",backToTop);
+        js.executeScript("arguments[0].click();", backToTop);
         waitFor(2);
     }
 }

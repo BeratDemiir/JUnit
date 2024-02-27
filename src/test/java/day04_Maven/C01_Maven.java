@@ -37,7 +37,7 @@ public class C01_Maven {
 
         // Sayfadaki tum basliklari yazdiralim
         List<WebElement> sayfaBasliklari = driver.findElements(By.xpath("//h1"));
-        for (WebElement w : sayfaBasliklari){
+        for (WebElement w : sayfaBasliklari) {
             System.out.println(w.getText());
         }
 
