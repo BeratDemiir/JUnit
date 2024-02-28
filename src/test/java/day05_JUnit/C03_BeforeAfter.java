@@ -12,8 +12,9 @@ import java.time.Duration;
 public class C03_BeforeAfter {
 
     WebDriver driver;
+
     @Before
-    public void setUp(){
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -21,14 +22,15 @@ public class C03_BeforeAfter {
     }
 
     @After
-    public void tearDown(){
+    public void tearDown() {
         driver.close();
     }
 
     @Test
-    public void test01(){
+    public void test01() {
         driver.get("https://amazon.com");
     }
+
     @Test
     public void test02() {
         driver.get("https://techproeducation.com");
