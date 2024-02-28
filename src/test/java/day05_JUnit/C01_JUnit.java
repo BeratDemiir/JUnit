@@ -10,7 +10,7 @@ import java.time.Duration;
 public class C01_JUnit {
 
     @Test
-    public void test01(){
+    public void test01() {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();

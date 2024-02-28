@@ -6,17 +6,20 @@ import org.junit.Test;
 
 public class C02_BeforeAfter {
     @Before
-    public void setUp(){
+    public void setUp() {
         System.out.println("Her Test Methodundan once calisir");
     }
+
     @After
-    public void tearDown(){
+    public void tearDown() {
         System.out.println("Her Test Methodundan sonra calisir");
     }
+
     @Test
-    public void test01(){
+    public void test01() {
         System.out.println("Ilk test");
     }
+
     @Test
     public void test02() {
         System.out.println("Ikinci test");
