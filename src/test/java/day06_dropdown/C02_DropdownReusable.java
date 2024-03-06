@@ -14,6 +14,7 @@ import java.util.List;
 public class C02_DropdownReusable {
 
     WebDriver driver;
+
     @Before
     public void setUp() {
         WebDriverManager.chromedriver().setup();
@@ -24,16 +25,16 @@ public class C02_DropdownReusable {
         driver.get("https://testcenter.techproeducation.com/index.php?page=dropdown");
     }
 
- //  REUSABLE METHOD: Dropdown icin tekrar tekrar kullanabilecegimiz bir method olusturalim
+    //  REUSABLE METHOD: Dropdown icin tekrar tekrar kullanabilecegimiz bir method olusturalim
     public void selectFromDropdown(WebElement dropdown, String secenek) {
-     //   selectFromDropdown(driver.findElement(By.xpath("//select[@id='year']")),"2005");
-    //    selectFromDropdown(driver.findElement(By.xpath("//select[@id='month']")),"January");
-    //    selectFromDropdown(driver.findElement(By.xpath("//select[@id='day']")), "12");
+        //   selectFromDropdown(driver.findElement(By.xpath("//select[@id='year']")),"2005");
+        //    selectFromDropdown(driver.findElement(By.xpath("//select[@id='month']")),"January");
+        //    selectFromDropdown(driver.findElement(By.xpath("//select[@id='day']")), "12");
 
         // Gonderilen dropdown elemnetinin tum optionslari alinir.
         List<WebElement> options = dropdown.findElements(By.tagName("option"));// Tum option tagli elementleri aliyorum
-        for (WebElement eachoption : options){
-            if (eachoption.getText().equals(secenek)){
+        for (WebElement eachoption : options) {
+            if (eachoption.getText().equals(secenek)) {
                 eachoption.click();
                 break;
             }
@@ -42,9 +43,9 @@ public class C02_DropdownReusable {
 
     @Test
     public void selectFromDropdown() {
-        selectFromDropdown(driver.findElement(By.xpath("//select[@id='year']")),"2005");
-        selectFromDropdown(driver.findElement(By.id("month")),"November" );
-        selectFromDropdown(driver.findElement(By.id("day")),"10" );
-        selectFromDropdown(driver.findElement(By.id("state")),"Texas" );
+        selectFromDropdown(driver.findElement(By.xpath("//select[@id='year']")), "2005");
+        selectFromDropdown(driver.findElement(By.id("month")), "November");
+        selectFromDropdown(driver.findElement(By.id("day")), "10");
+        selectFromDropdown(driver.findElement(By.id("state")), "Texas");
     }
 }
