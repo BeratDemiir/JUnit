@@ -17,7 +17,8 @@ import java.util.List;
 public class C01_Dropdown {
 
     WebDriver driver;
-// Eger test sinifinda birden fazla method olusturulmussa @Before kullanilir.
+
+    // Eger test sinifinda birden fazla method olusturulmussa @Before kullanilir.
     @Before
     public void setUp() {
         WebDriverManager.chromedriver().setup();
@@ -31,16 +32,16 @@ public class C01_Dropdown {
     @Test
     public void selectByIndexTest() {
 
-                //   Dogum yilini, ayini, ve gununu su sekilde secer:  2000, january, 10
+        //   Dogum yilini, ayini, ve gununu su sekilde secer:  2000, january, 10
         //  1. Adim: dropdown elementini locate etmek.
         WebElement year = driver.findElement(By.xpath("//select[@id='year']"));
 
         // 2. Adim: select objesi olusturun
         Select yearDropdown = new Select(year);
         // 3. Adim: Select object'i kullanarak 3 farkli sekilde secim yapabilirim
-                //   select.selectByIndex();  Secenek sirasi 0 dan baslar
-                //   select.selectByValue();   option in value degeri ile secim yapilabilir.
-                //   select.selectByVisibleText(); Case sensitive buyuk kucuk harfe duyarli
+        //   select.selectByIndex();  Secenek sirasi 0 dan baslar
+        //   select.selectByValue();   option in value degeri ile secim yapilabilir.
+        //   select.selectByVisibleText(); Case sensitive buyuk kucuk harfe duyarli
         yearDropdown.selectByIndex(23);
 
         // Ay secimi
@@ -79,12 +80,12 @@ public class C01_Dropdown {
         // Tum eyalet isimlerini console yazdirin.
         WebElement state = driver.findElement(By.xpath("//select[@id='state']"));
         Select stateDropdown = new Select(state);
-       List<WebElement> stateList = stateDropdown.getOptions();
-       for (WebElement eachstate : stateList){
-           System.out.println(eachstate.getText());
-       }
-       // Lamda ile cozumu
-       //  stateList.stream().forEach(t-> System.out.println(t.getText()));
+        List<WebElement> stateList = stateDropdown.getOptions();
+        for (WebElement eachstate : stateList) {
+            System.out.println(eachstate.getText());
+        }
+        // Lamda ile cozumu
+        //  stateList.stream().forEach(t-> System.out.println(t.getText()));
     }
 
     @Test
@@ -93,8 +94,8 @@ public class C01_Dropdown {
         // Select a State nin secilip secilmnedigini kontrol edelim
         WebElement state = driver.findElement(By.xpath("//select[@id='state']"));
         Select stateDropdown = new Select(state);
-        String varsayilanText =  stateDropdown.getFirstSelectedOption().getText();
-        Assert.assertEquals("Select a State",  varsayilanText);
+        String varsayilanText = stateDropdown.getFirstSelectedOption().getText();
+        Assert.assertEquals("Select a State", varsayilanText);
     }
 
     @After
